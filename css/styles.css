@@ -1,0 +1,611 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #12141a; /* Set the background color of the page */
+  color: white; /* Set the default text color for better visibility on dark background */
+  margin: 0;
+  padding: 0;
+}
+main{
+  flex-grow: 1;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+
+.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(51, 51, 51, 0.6); /* Semi-transparent background color */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 24px; /* Adjust size as needed */
+}
+
+.brand-logo {
+  height: 40px; /* Adjust as needed */
+  margin-right: 10px;
+  filter: brightness(150%); /* Increase brightness of the logo */
+}
+
+.nav-links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  list-style-type: none;
+  margin: 0 15px; /* Add some margin between items */
+}
+
+.nav-item a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 8px; /* Rounded corners */
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat to nav items */
+  transition: background-color 0.3s ease, border 0.3s ease; /* Smooth transition for background and border */
+}
+
+.nav-item a:hover {
+  border-radius: 8px; /* Rounded corners on hover */
+  border: 2px solid #fffb00aa;
+  padding: 12px 14px; /* Ensure padding remains consistent */
+}
+
+.login-button {
+  background-color: #eae705aa; /* Set background color */
+  color: white; /* Set text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Add padding */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border: 3px solid #ffffffaa;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Smooth transition for background, border, and color */
+}
+
+.login-button:hover {
+  background-color: #fffb00; /* Change background color on hover */
+  color: #12141a;
+  font-weight: bold;
+  border: 0px;
+}
+
+.login-buttona {
+  background-color: #eae705aa; /* Set background color */
+  color: white; /* Set text color */
+  border: none; /* Remove border */
+  padding: 15px 30px; /* Add padding */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  font-family: 'Montserrat', sans-serif;
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  border: 4px solid #ffffffaa;
+  transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease; /* Smooth transition for background, border, and color */
+}
+
+.login-buttona:hover {
+  background-color: #fffb00; /* Change background color on hover */
+  color: #12141a;
+  font-weight: bold;
+  border: 0px;
+  padding: 19px 34px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative; /* Ensure position for absolute elements */
+  background-image: url('https://source.unsplash.com/1920x1080/?gym');
+  background-size: cover;
+  background-position: center;
+  height: 750px; /* Increase the height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column; /* Align items in column */
+  margin-bottom: 20px; /* Add bottom margin to create space between hero and contents */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 50, 0.556); /* Semi-transparent blue color */
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1; /* Ensure content appears above slideshow */
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem; /* Increase the font size */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2%;
+}
+
+.slideshow-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 1; /* Ensure it appears above the overlay */
+}
+
+.text-content {
+  width: 50%;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.slideshow-container {
+  width: 50%;
+  padding: 20px; /* Add padding to prevent touching the edges */
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  overflow: hidden; /* Hide overflow to prevent images from overflowing */
+  z-index: 1; /* Set z-index to make the slideshow behind the overlay */
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  border-radius: 10px; /* Adjust the border radius as needed */
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+      opacity: 0.4;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Navigation arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* Adjust width */
+  height: 50px; /* Adjust height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px; /* Center arrows vertically */
+  border-radius: 50%; /* Make arrows circular */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next {
+  right: 0;
+  margin-right: 10px;
+}
+
+/* Navigation arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* Adjust width */
+  height: 50px; /* Adjust height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px; /* Center arrows vertically */
+  border-radius: 50%; /* Make arrows circular */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev {
+  left: 0;
+  margin-left: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
+}
+
+.slideshow-bullets {
+  position: absolute; /* Position bullets relative to the slideshow */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex; /* Display bullets in a row */
+  z-index: 2; /* Ensure bullets appear above images */
+}
+
+.bullet {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.bullet.active {
+  background-color: rgba(38, 38, 38, 0.81); /* Semi-transparent white, darker when active */
+}
+
+/* Content section */
+
+.contents {
+  background-image: url('https://source.unsplash.com/1920x1080/?diet,health');
+  position: relative; /* Ensure position for absolute elements */
+  height: 750px; /* Increase the height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column; /* Align items in column */
+  margin-bottom: 5px; /* Add bottom margin to create space between hero and contents */
+}
+
+.contents-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 50, 0.556); /* Semi-transparent blue color */
+  z-index: 0;
+}
+.contents h1 {
+  text-align: top;
+  font-size: 2rem; /* Increase the font size */
+  margin-bottom: 2%;
+  z-index: 1;
+}
+
+.contents h2 {
+  font-size: 1rem; /* Increase the font size */
+  z-index: 1;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px; /* Adjust the width as needed */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+  flex: 1 0 30%; /* Adjust the flex-basis to control the width of the cards */
+}
+
+.card img {
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block;
+}
+
+.card img:hover {
+  background-color: #fffb0092;
+}
+
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 25px;
+  
+}
+
+/* Footer section */
+
+.footer{
+  background-color: #111111;
+  padding: 70px 0;
+  bottom: 0;
+  margin-top: auto; /* Push the child to the bottom */
+  width: 100%;
+}
+.footer-col{
+ width: 25%;
+ padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: #222222;
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #333333;
+  background-color: #ffffff;
+}
+.copyright-footer{
+display:flex;
+justify-content: center;
+align-items: center;
+background-color: #222222;
+padding:20px;
+color:#999999;
+}
+.copyright-footer p a{
+color:#e91e63;
+}
+/*responsive*/
+@media(max-width: 767px){
+.footer-col{
+  width: 50%;
+  margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+.footer-col{
+  width: 100%;
+}
+}
+
+/* Login and Sign Up section */
+
+.login-section{
+  position: relative; /* Ensure position for absolute elements */
+  background-image: url('https://source.unsplash.com/1920x1080/?gym');
+  background-size: cover;
+  background-position: center;
+  height: 750px; /* Increase the height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column; /* Align items in column */
+  margin-bottom: 20px; /* Add bottom margin to create space between hero and contents */ 
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 50, 0.556); /* Semi-transparent blue color */
+  z-index: 0;
+}
+
+.login-container {
+  width: 300px;
+  margin: 100px auto 50px;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  background-color: #0915279c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #eae705aa;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: #fffb00;
+  color: #111111;
+}
+/* Dashboard section */
+.dashboard {
+  padding: 60px 0;
+  background-color: #1c1e22;
+  color: white;
+  text-align: center;
+  background-image: url('https://source.unsplash.com/1920x1080/?gym');
+}
+
+.dashboard-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 50, 0.556); /* Semi-transparent blue color */
+  z-index: 0;
+}
+
+.dashboard {
+  max-width: auto;
+  margin: auto;
+  position: relative; /* Ensure position for absolute elements */
+  background-image: url('https://source.unsplash.com/1920x1080/?gym');
+  background-size: cover;
+  background-position: center;
+  height: 750px; /* Increase the height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column; /* Align items in column */
+}
+
+.dashboard-container {
+  max-width: 1170px;
+  margin: auto;
+  z-index: 1;
+}
+
+.dashboard-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.dashboard-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.dashboard-card {
+  background-color: #282a2fa1;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.dashboard-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard-card ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}

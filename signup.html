@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Fitness</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!--Nav bar section-->
+<nav class="nav-bar">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Brand Logo" class="brand-logo"> Real Fitness
+        </a>
+        <div class="nav-links">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Programs</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <a href="login.html"><button class="login-button">Login</button></a>
+    </nav>
+
+<!--Sign Up Form Section-->
+<section class="login-section">
+  <div class="login-overlay"></div>
+  <div class="login-container">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit" class="btn-login">Sign Up</button>
+    </form>
+</div>
+</section>
+    <!--Footer section-->
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">>> about us</a></li>
+            <li><a href="#">>> our services</a></li>
+            <li><a href="#">>> privacy policy</a></li>
+            <li><a href="#">>> Our Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="#">>> FAQ</a></li>
+            <li><a href="#">>> Order Cancelation</a></li>
+            <li><a href="#">>> Order status</a></li>
+            <li><a href="#">>> Payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">>> SEO</a></li>
+            <li><a href="#">>> Custom Website</a></li>
+            <li><a href="#">>> WordPress Website</a></li>
+            <li><a href="#">>> Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

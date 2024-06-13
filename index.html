@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Fitness</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!--Nav bar section-->
+<nav class="nav-bar">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Brand Logo" class="brand-logo"> Real Fitness
+        </a>
+        <div class="nav-links">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Programs</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+                <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+        <a href="login.html"><button class="login-button">Login</button></a>
+    </nav>
+<!--Hero section-->
+<section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Real Fitness</h1>
+            <p>Your Journey to Health Starts Here</p>
+        </div>
+        <div class="slideshow-text-container">
+            <div class="text-content">
+                <p>Tired of the same old routine? Craving a lifestyle that fuels your body and mind? We believe fitness is more than just exercise; it's a journey of discovery and transformation. Let us guide you towards a healthier, happier you.</p>
+                <a href="login.html"><button class="login-buttona">Join Our Community and Find Your Spark</button></a>
+            </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="https://source.unsplash.com/600x400/?fitness,workout1" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="https://source.unsplash.com/600x400/?fitness,workout2" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img src="https://source.unsplash.com/600x400/?fitness,workout3" style="width:100%">
+                </div>
+
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+
+                <div class="slideshow-bullets">
+                    <span class="bullet" onclick="currentSlide(1)"></span>
+                    <span class="bullet" onclick="currentSlide(2)"></span>
+                    <span class="bullet" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--Contents section-->
+<section class="contents">
+    <div class="contents-overlay"></div>
+    <h1>Train for a Stronger, Healthier You</h1>
+    <h2>Build endurance, sculpt muscle, or get stronger. We offer personalized workouts for every need.</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://source.unsplash.com/2000x720/?cardio" alt="Image 1">
+            <div class="card-text">Cardio</div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/2000x720/?strength" alt="Image 2">
+            <div class="card-text">Strength</div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/2000x720/?muscle" alt="Image 3">
+            <div class="card-text">Muscle</div>
+        </div>
+    </section>
+
+<!--Footer section-->
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">>> about us</a></li>
+            <li><a href="#">>> our services</a></li>
+            <li><a href="#">>> privacy policy</a></li>
+            <li><a href="#">>> Our Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="#">>> FAQ</a></li>
+            <li><a href="#">>> Order Cancelation</a></li>
+            <li><a href="#">>> Order status</a></li>
+            <li><a href="#">>> Payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">>> SEO</a></li>
+            <li><a href="#">>> Custom Website</a></li>
+            <li><a href="#">>> WordPress Website</a></li>
+            <li><a href="#">>> Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let bullets = document.getElementsByClassName("bullet");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (let i = 0; i < bullets.length; i++) {
+                bullets[i].className = bullets[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            bullets[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+    </script>
+    
+</body>
+</html>
